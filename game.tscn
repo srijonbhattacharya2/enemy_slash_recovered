@@ -135,6 +135,19 @@ target = NodePath("../../Player")
 position = Vector2(3.2197266, 3.2200317)
 shape = SubResource("RectangleShape2D_7jktm")
 
+[node name="Enemy7" type="Sprite2D" parent="Enemys" node_paths=PackedStringArray("target")]
+position = Vector2(16584, 1352)
+scale = Vector2(0.15527344, 0.15527344)
+texture = ExtResource("3_feb5d")
+script = ExtResource("4_7jktm")
+target = NodePath("../../Player")
+
+[node name="Area2D" type="Area2D" parent="Enemys/Enemy7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy7/Area2D"]
+position = Vector2(3.2197266, 3.2200317)
+shape = SubResource("RectangleShape2D_7jktm")
+
 [node name="Background" type="Node2D" parent="."]
 z_index = -5
 
@@ -582,4 +595,5 @@ texture = ExtResource("31_xfvwf")
 [connection signal="body_entered" from="Enemys/Enemy5/Area2D" to="Enemys/Enemy5" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy6/Area2D" to="Enemys/Enemy6" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy4/Area2D" to="Enemys/Enemy4" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Enemys/Enemy7/Area2D" to="Enemys/Enemy7" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Win Region" to="Win Region" method="_on_body_entered"]
