@@ -368,60 +368,43 @@ shape = SubResource("RectangleShape2D_215e1")
 [node name="Music" type="Node" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Music"]
+position = Vector2(489, 393)
 stream = ExtResource("13_lc2xo")
 volume_db = 24.0
 autoplay = true
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Music"]
-position = Vector2(2922, 260)
+position = Vector2(3935, 772)
 stream = ExtResource("13_lc2xo")
 volume_db = 24.0
 autoplay = true
 
 [node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="Music"]
-position = Vector2(4338, 1041)
+position = Vector2(7139, 767)
 stream = ExtResource("13_lc2xo")
 volume_db = 24.0
 autoplay = true
 
 [node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="Music"]
-position = Vector2(5559, 162)
+position = Vector2(7168, 841)
 stream = ExtResource("13_lc2xo")
 volume_db = 24.0
 autoplay = true
 
 [node name="AudioStreamPlayer2D5" type="AudioStreamPlayer2D" parent="Music"]
-position = Vector2(7505, 1237)
+position = Vector2(9889, 796)
 stream = ExtResource("13_lc2xo")
 volume_db = 24.0
 autoplay = true
 
 [node name="AudioStreamPlayer2D6" type="AudioStreamPlayer2D" parent="Music"]
-position = Vector2(8905, 301)
+position = Vector2(13053, 802)
 stream = ExtResource("13_lc2xo")
 volume_db = 24.0
 autoplay = true
 
 [node name="AudioStreamPlayer2D7" type="AudioStreamPlayer2D" parent="Music"]
-position = Vector2(10614, 1131)
-stream = ExtResource("13_lc2xo")
-volume_db = 24.0
-autoplay = true
-
-[node name="AudioStreamPlayer2D8" type="AudioStreamPlayer2D" parent="Music"]
-position = Vector2(12462, 325)
-stream = ExtResource("13_lc2xo")
-volume_db = 24.0
-autoplay = true
-
-[node name="AudioStreamPlayer2D9" type="AudioStreamPlayer2D" parent="Music"]
-position = Vector2(14180, 1163)
-stream = ExtResource("13_lc2xo")
-volume_db = 24.0
-autoplay = true
-
-[node name="AudioStreamPlayer2D10" type="AudioStreamPlayer2D" parent="Music"]
-position = Vector2(16272, 593)
+position = Vector2(15437, 850)
 stream = ExtResource("13_lc2xo")
 volume_db = 24.0
 autoplay = true
