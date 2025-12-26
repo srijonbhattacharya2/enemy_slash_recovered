@@ -1,3 +1,5 @@
+#enemy2.gd
+#=========
 extends Sprite2D
 
 
