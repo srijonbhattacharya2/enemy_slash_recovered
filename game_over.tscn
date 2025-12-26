@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://cr2shoqsaeu0p"]
+
+[ext_resource type="Script" uid="uid://blxyye33reea8" path="res://game_over.gd" id="1_ftari"]
+[ext_resource type="Texture2D" uid="uid://d0qs4scq0b7my" path="res://pictures/Background.png" id="1_y26ei"]
+[ext_resource type="FontFile" uid="uid://ccprvc1rlutw0" path="res://BoldPixels.ttf" id="2_yxx3c"]
+[ext_resource type="Texture2D" uid="uid://f7amgtsvv4as" path="res://pictures/Restart.png" id="3_ccer4"]
+[ext_resource type="Texture2D" uid="uid://b7xjo1oj6siwq" path="res://pictures/Cross.png" id="4_8u835"]
+[ext_resource type="AudioStream" uid="uid://ban71quk07wad" path="res://Audio/Game Over.mp3" id="6_28vn7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u835"]
+bg_color = Color(0.7162962, 0.71629626, 0.7162961, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 50
+corner_radius_bottom_right = 50
+
+[node name="Game Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ftari")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(1597.25, 908.5)
+scale = Vector2(11.338187, 11.815476)
+texture = ExtResource("1_y26ei")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -659.0
+offset_top = 252.0
+offset_right = 3403.0
+offset_bottom = 752.0
+grow_horizontal = 2
+scale = Vector2(0.328525, 0.328525)
+theme_override_fonts/font = ExtResource("2_yxx3c")
+theme_override_font_sizes/font_size = 500
+text = "⚔️ Game Over ⚔️"
+
+[node name="restart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 645.0
+offset_right = 1367.0
+offset_bottom = 1042.0
+scale = Vector2(0.3600003, 0.3600003)
+focus_mode = 0
+theme_override_colors/font_color = Color(0.41981265, 0.4198134, 0.41981277, 1)
+theme_override_fonts/font = ExtResource("2_yxx3c")
+theme_override_font_sizes/font_size = 200
+theme_override_styles/normal = SubResource("StyleBoxFlat_8u835")
+text = " Restart "
+icon = ExtResource("3_ccer4")
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1300.9999
+offset_top = 645.0
+offset_right = 2475.0
+offset_bottom = 1042.0
+scale = Vector2(0.3600003, 0.3600003)
+focus_mode = 0
+theme_override_colors/font_color = Color(0.41981265, 0.4198134, 0.41981277, 1)
+theme_override_fonts/font = ExtResource("2_yxx3c")
+theme_override_font_sizes/font_size = 200
+theme_override_styles/normal = SubResource("StyleBoxFlat_8u835")
+text = " Exit "
+icon = ExtResource("4_8u835")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, 190)
+stream = ExtResource("6_28vn7")
+autoplay = true
+
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://b66ay7qjddaa6"]
+
+[ext_resource type="Script" uid="uid://b57fy206aj837" path="res://shop_bar.gd" id="1_2fn6m"]
+[ext_resource type="Texture2D" uid="uid://c6c3l38rpmbb8" path="res://pictures/Sword.webp" id="1_p6o4r"]
+[ext_resource type="FontFile" uid="uid://ccprvc1rlutw0" path="res://BoldPixels.ttf" id="2_2fn6m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrtl5"]
+bg_color = Color(0, 0.4594494, 0.91058415, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Shop Bar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2fn6m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 2)
+scale = Vector2(0.4074074, 0.4074074)
+texture = ExtResource("1_p6o4r")
+
+[node name="sword_buy" type="Button" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 88.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("2_2fn6m")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_hrtl5")
+text = "Buy"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -61.0
+offset_top = 58.0
+offset_right = 59.0
+offset_bottom = 163.0
+theme_override_colors/font_color = Color(0.23370585, 0.38486615, 1, 1)
+theme_override_fonts/font = ExtResource("2_2fn6m")
+theme_override_font_sizes/font_size = 50
+text = "Shop Bar"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="sword_buy" to="." method="_on_sword_buy_pressed"]

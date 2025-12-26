@@ -1,0 +1,570 @@
+[gd_scene load_steps=35 format=3 uid="uid://bmm1quh2tgto"]
+
+[ext_resource type="Script" uid="uid://crwbtkcxm6th8" path="res://global.gd" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://cx7anx2l5y05p" path="res://pictures/Enemy.png" id="3_feb5d"]
+[ext_resource type="Script" uid="uid://coajc4khk5e4b" path="res://scripts/enemy/enemy.gd" id="4_7jktm"]
+[ext_resource type="Script" uid="uid://o47d84vi2174" path="res://enemy_2.gd" id="4_mfdv2"]
+[ext_resource type="Script" uid="uid://dhb7vbv316ip7" path="res://enemy_3.gd" id="5_iotsf"]
+[ext_resource type="Script" uid="uid://bxcbxfrp4rfk3" path="res://player.gd" id="6_hve3p"]
+[ext_resource type="Texture2D" uid="uid://d0qs4scq0b7my" path="res://pictures/Background.png" id="6_ryrav"]
+[ext_resource type="Texture2D" uid="uid://doc2h1jnmlw5" path="res://pictures/Player Default.png" id="6_vef74"]
+[ext_resource type="Script" uid="uid://0rbs111j2cw8" path="res://playerlg.gd" id="7_hve3p"]
+[ext_resource type="Texture2D" uid="uid://bjap5cr25suua" path="res://pictures/Player Blue.png" id="8_mfdv2"]
+[ext_resource type="Script" uid="uid://b6epgraneh4lg" path="res://playerdg.gd" id="9_iotsf"]
+[ext_resource type="Texture2D" uid="uid://cquntxk1dl3d7" path="res://pictures/Platform.png" id="10_hve3p"]
+[ext_resource type="Texture2D" uid="uid://c6c3l38rpmbb8" path="res://pictures/Sword.webp" id="12_e8heu"]
+[ext_resource type="Script" uid="uid://ciosmu7avue1d" path="res://sword.gd" id="13_boyg6"]
+[ext_resource type="AudioStream" uid="uid://cje0lvk4jv7qo" path="res://Audio/Game Music.mp3" id="13_lc2xo"]
+[ext_resource type="PackedScene" uid="uid://djj6q0ely84mu" path="res://coin.tscn" id="14_215e1"]
+[ext_resource type="Texture2D" uid="uid://cqqpc2db6n2oi" path="res://pictures/3 Hearts.png" id="14_vaj68"]
+[ext_resource type="FontFile" uid="uid://ccprvc1rlutw0" path="res://BoldPixels.ttf" id="15_80cx4"]
+[ext_resource type="Texture2D" uid="uid://dwbo5tasodn80" path="res://pictures/2 Hearts.png" id="15_i2p71"]
+[ext_resource type="Script" uid="uid://lc83aum37dwg" path="res://3 of 3.gd" id="15_xa8c5"]
+[ext_resource type="Texture2D" uid="uid://bg5vnnh6rajtg" path="res://pictures/Coin.png" id="16_e8heu"]
+[ext_resource type="Texture2D" uid="uid://b5cai5jw33nvm" path="res://pictures/1 heart.png" id="16_xa8c5"]
+[ext_resource type="Texture2D" uid="uid://bo5m57r5gics6" path="res://pictures/0 Hearts.png" id="17_5b14r"]
+[ext_resource type="Script" uid="uid://edp2ura0syp5" path="res://1 of 3.gd" id="17_bnpwn"]
+[ext_resource type="Script" uid="uid://g4xnkt83kcvx" path="res://2 of 3.gd" id="17_xa8c5"]
+[ext_resource type="Script" uid="uid://c37r4pth4uxg0" path="res://label.gd" id="18_hb5m1"]
+[ext_resource type="PackedScene" uid="uid://cp57agmu82o6j" path="res://touch_controls.tscn" id="18_rvswv"]
+[ext_resource type="PackedScene" uid="uid://b66ay7qjddaa6" path="res://shop_bar.tscn" id="20_e36ub"]
+[ext_resource type="Script" uid="uid://brwqh0y74nfgq" path="res://0 of 3.gd" id="21_bnpwn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
+size = Vector2(676.2272, 676.22644)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc2xo"]
+size = Vector2(100, 97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfdv2"]
+size = Vector2(326, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iotsf"]
+size = Vector2(31, 1831)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_215e1"]
+size = Vector2(20193, 19)
+
+[node name="Game" type="Node2D"]
+
+[node name="Global" type="Node" parent="."]
+script = ExtResource("1_80nbo")
+
+[node name="Enemys" type="Node2D" parent="."]
+
+[node name="Enemy" type="Sprite2D" parent="Enemys" node_paths=PackedStringArray("target")]
+position = Vector2(857, 113.000015)
+scale = Vector2(0.15527344, 0.15527344)
+texture = ExtResource("3_feb5d")
+script = ExtResource("4_7jktm")
+target = NodePath("../../Player")
+
+[node name="Area2D" type="Area2D" parent="Enemys/Enemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy/Area2D"]
+position = Vector2(3.2197266, 3.2200317)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="Enemy2" type="Sprite2D" parent="Enemys" node_paths=PackedStringArray("target")]
+position = Vector2(11869, 1226)
+scale = Vector2(0.15527344, 0.15527344)
+texture = ExtResource("3_feb5d")
+script = ExtResource("4_mfdv2")
+target = NodePath("../../Player")
+
+[node name="Area2D" type="Area2D" parent="Enemys/Enemy2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy2/Area2D"]
+position = Vector2(3.2197266, 3.2200317)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="Enemy3" type="Sprite2D" parent="Enemys" node_paths=PackedStringArray("target")]
+position = Vector2(5665, 215.00006)
+scale = Vector2(0.15527344, 0.15527344)
+texture = ExtResource("3_feb5d")
+script = ExtResource("5_iotsf")
+target = NodePath("../../Player")
+
+[node name="Area2D" type="Area2D" parent="Enemys/Enemy3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy3/Area2D"]
+position = Vector2(3.2197266, 3.2200317)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="Enemy5" type="Sprite2D" parent="Enemys" node_paths=PackedStringArray("target")]
+position = Vector2(9861, 244.00012)
+scale = Vector2(0.15527344, 0.15527344)
+texture = ExtResource("3_feb5d")
+script = ExtResource("5_iotsf")
+target = NodePath("../../Player")
+
+[node name="Area2D" type="Area2D" parent="Enemys/Enemy5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy5/Area2D"]
+position = Vector2(3.2197266, 3.2200317)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="Enemy6" type="Sprite2D" parent="Enemys" node_paths=PackedStringArray("target")]
+position = Vector2(13642.001, 170)
+scale = Vector2(0.15527344, 0.15527344)
+texture = ExtResource("3_feb5d")
+script = ExtResource("5_iotsf")
+target = NodePath("../../Player")
+
+[node name="Area2D" type="Area2D" parent="Enemys/Enemy6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy6/Area2D"]
+position = Vector2(3.2197266, 3.2200317)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="Enemy4" type="Sprite2D" parent="Enemys" node_paths=PackedStringArray("target")]
+position = Vector2(5201, 1378)
+scale = Vector2(0.15527344, 0.15527344)
+texture = ExtResource("3_feb5d")
+script = ExtResource("4_7jktm")
+target = NodePath("../../Player")
+
+[node name="Area2D" type="Area2D" parent="Enemys/Enemy4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy4/Area2D"]
+position = Vector2(3.2197266, 3.2200317)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="Background" type="Node2D" parent="."]
+z_index = -5
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(1401.25, 828.49994)
+scale = Vector2(9.474111, 10.291666)
+texture = ExtResource("6_ryrav")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background"]
+position = Vector2(4287.0005, 828.00006)
+scale = Vector2(9.474111, 10.291666)
+texture = ExtResource("6_ryrav")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Background"]
+position = Vector2(7194.0005, 828.00006)
+scale = Vector2(9.474111, 10.291666)
+texture = ExtResource("6_ryrav")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Background"]
+position = Vector2(10065, 823)
+scale = Vector2(9.474111, 10.291666)
+texture = ExtResource("6_ryrav")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Background"]
+position = Vector2(12875, 828.00006)
+scale = Vector2(9.474111, 10.291666)
+texture = ExtResource("6_ryrav")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Background"]
+position = Vector2(15776.001, 818)
+scale = Vector2(9.474111, 10.291666)
+texture = ExtResource("6_ryrav")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Background"]
+position = Vector2(18692, 828)
+scale = Vector2(9.474111, 10.291666)
+texture = ExtResource("6_ryrav")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(618, 499)
+script = ExtResource("6_hve3p")
+
+[node name="Skin 1" type="Sprite2D" parent="Player"]
+z_index = 1
+position = Vector2(-1, 0)
+texture = ExtResource("6_vef74")
+script = ExtResource("7_hve3p")
+
+[node name="Skin 2" type="Sprite2D" parent="Player"]
+position = Vector2(-1, 0)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("8_mfdv2")
+script = ExtResource("9_iotsf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_lc2xo")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = -29
+limit_top = -8
+limit_right = 17173
+limit_bottom = 1648
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 3.0
+
+[node name="Sword" type="Sprite2D" parent="Player"]
+position = Vector2(98, -9)
+scale = Vector2(0.37345678, 0.37345678)
+texture = ExtResource("12_e8heu")
+script = ExtResource("13_boyg6")
+
+[node name="Health" type="Node2D" parent="Player"]
+position = Vector2(6.9999995, -89.99999)
+scale = Vector2(0.2400006, 0.2400006)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Health"]
+texture = ExtResource("14_vaj68")
+script = ExtResource("15_xa8c5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player/Health"]
+texture = ExtResource("15_i2p71")
+script = ExtResource("17_xa8c5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Player/Health"]
+texture = ExtResource("16_xa8c5")
+script = ExtResource("17_bnpwn")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Player/Health"]
+texture = ExtResource("17_5b14r")
+script = ExtResource("21_bnpwn")
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform" type="StaticBody2D" parent="Platforms"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform"]
+position = Vector2(617, 575)
+scale = Vector2(0.26953125, 0.26953125)
+texture = ExtResource("10_hve3p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform"]
+position = Vector2(614, 579)
+shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="Platform2" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1501, -239)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform2"]
+position = Vector2(617, 575)
+scale = Vector2(0.26953125, 0.26953125)
+texture = ExtResource("10_hve3p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform2"]
+position = Vector2(614, 579)
+shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="Platform3" type="StaticBody2D" parent="Platforms"]
+position = Vector2(2650, 377)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform3"]
+position = Vector2(617, 575)
+scale = Vector2(0.26953125, 0.26953125)
+texture = ExtResource("10_hve3p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform3"]
+position = Vector2(614, 579)
+shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="Platform4" type="StaticBody2D" parent="Platforms"]
+position = Vector2(4024, 170)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform4"]
+position = Vector2(617, 575)
+scale = Vector2(0.26953125, 0.26953125)
+texture = ExtResource("10_hve3p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform4"]
+position = Vector2(614, 579)
+shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="Platform5" type="StaticBody2D" parent="Platforms"]
+position = Vector2(5324, -60)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform5"]
+position = Vector2(617, 575)
+scale = Vector2(0.26953125, 0.26953125)
+texture = ExtResource("10_hve3p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform5"]
+position = Vector2(614, 579)
+shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="Platform6" type="StaticBody2D" parent="Platforms"]
+position = Vector2(7107, 152)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform6"]
+position = Vector2(617, 575)
+scale = Vector2(0.26953125, 0.26953125)
+texture = ExtResource("10_hve3p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform6"]
+position = Vector2(614, 579)
+shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="Platform7" type="StaticBody2D" parent="Platforms"]
+position = Vector2(8182, -125)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform7"]
+position = Vector2(617, 575)
+scale = Vector2(0.26953125, 0.26953125)
+texture = ExtResource("10_hve3p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform7"]
+position = Vector2(614, 579)
+shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="Platform8" type="StaticBody2D" parent="Platforms"]
+position = Vector2(11772, 347)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform8"]
+position = Vector2(617, 575)
+scale = Vector2(0.26953125, 0.26953125)
+texture = ExtResource("10_hve3p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform8"]
+position = Vector2(614, 579)
+shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="Platform9" type="StaticBody2D" parent="Platforms"]
+position = Vector2(14751, -321)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform9"]
+position = Vector2(617, 575)
+scale = Vector2(0.26953125, 0.26953125)
+texture = ExtResource("10_hve3p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform9"]
+position = Vector2(614, 579)
+shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="Boundary" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(-47.5, 803.5)
+shape = SubResource("RectangleShape2D_iotsf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(17402, 830)
+shape = SubResource("RectangleShape2D_iotsf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(10035.5, -26.5)
+shape = SubResource("RectangleShape2D_215e1")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(10036, 1665)
+shape = SubResource("RectangleShape2D_215e1")
+
+[node name="Music" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Music"]
+stream = ExtResource("13_lc2xo")
+volume_db = 24.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Music"]
+position = Vector2(2922, 260)
+stream = ExtResource("13_lc2xo")
+volume_db = 24.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="Music"]
+position = Vector2(4338, 1041)
+stream = ExtResource("13_lc2xo")
+volume_db = 24.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="Music"]
+position = Vector2(5559, 162)
+stream = ExtResource("13_lc2xo")
+volume_db = 24.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D5" type="AudioStreamPlayer2D" parent="Music"]
+position = Vector2(7505, 1237)
+stream = ExtResource("13_lc2xo")
+volume_db = 24.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D6" type="AudioStreamPlayer2D" parent="Music"]
+position = Vector2(8905, 301)
+stream = ExtResource("13_lc2xo")
+volume_db = 24.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D7" type="AudioStreamPlayer2D" parent="Music"]
+position = Vector2(10614, 1131)
+stream = ExtResource("13_lc2xo")
+volume_db = 24.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D8" type="AudioStreamPlayer2D" parent="Music"]
+position = Vector2(12462, 325)
+stream = ExtResource("13_lc2xo")
+volume_db = 24.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D9" type="AudioStreamPlayer2D" parent="Music"]
+position = Vector2(14180, 1163)
+stream = ExtResource("13_lc2xo")
+volume_db = 24.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D10" type="AudioStreamPlayer2D" parent="Music"]
+position = Vector2(16272, 593)
+stream = ExtResource("13_lc2xo")
+volume_db = 24.0
+autoplay = true
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("14_215e1")]
+position = Vector2(827, 572)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("14_215e1")]
+position = Vector2(3454, 979)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("14_215e1")]
+position = Vector2(2366, 165)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("14_215e1")]
+position = Vector2(4867, 720)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("14_215e1")]
+position = Vector2(6066, 313)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("14_215e1")]
+position = Vector2(5341, 1142)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("14_215e1")]
+position = Vector2(8057, 631)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("14_215e1")]
+position = Vector2(9573, 274)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("14_215e1")]
+position = Vector2(10712, 311)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("14_215e1")]
+position = Vector2(12927, 430)
+
+[node name="Coin11" parent="Coins" instance=ExtResource("14_215e1")]
+position = Vector2(14457, 871)
+
+[node name="Coin12" parent="Coins" instance=ExtResource("14_215e1")]
+position = Vector2(15652, 558)
+
+[node name="Coin Labels" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Coin Labels"]
+offset_left = 1781.0
+offset_top = 45.0
+offset_right = 1894.0
+offset_bottom = 245.0
+scale = Vector2(1, 1.4399993)
+theme_override_fonts/font = ExtResource("15_80cx4")
+theme_override_font_sizes/font_size = 200
+text = "0"
+script = ExtResource("18_hb5m1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Coin Labels/Label"]
+position = Vector2(-95, 95.833374)
+scale = Vector2(1.4824075, 1)
+texture = ExtResource("16_e8heu")
+
+[node name="Label2" type="Label" parent="Coin Labels"]
+offset_left = 4020.0
+offset_top = 80.0
+offset_right = 4133.0
+offset_bottom = 280.0
+scale = Vector2(1, 1.4399993)
+theme_override_fonts/font = ExtResource("15_80cx4")
+theme_override_font_sizes/font_size = 200
+text = "0"
+script = ExtResource("18_hb5m1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Coin Labels/Label2"]
+position = Vector2(-95, 95.833374)
+scale = Vector2(1.4824075, 1)
+texture = ExtResource("16_e8heu")
+
+[node name="Label3" type="Label" parent="Coin Labels"]
+offset_left = 6967.0
+offset_top = 95.0
+offset_right = 7080.0
+offset_bottom = 295.0
+scale = Vector2(1, 1.4399993)
+theme_override_fonts/font = ExtResource("15_80cx4")
+theme_override_font_sizes/font_size = 200
+text = "0"
+script = ExtResource("18_hb5m1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Coin Labels/Label3"]
+position = Vector2(-95, 95.833374)
+scale = Vector2(1.4824075, 1)
+texture = ExtResource("16_e8heu")
+
+[node name="Label4" type="Label" parent="Coin Labels"]
+offset_left = 9818.0
+offset_top = 95.0
+offset_right = 9931.0
+offset_bottom = 295.0
+scale = Vector2(1, 1.4399993)
+theme_override_fonts/font = ExtResource("15_80cx4")
+theme_override_font_sizes/font_size = 200
+text = "0"
+script = ExtResource("18_hb5m1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Coin Labels/Label4"]
+position = Vector2(-95, 95.833374)
+scale = Vector2(1.4824075, 1)
+texture = ExtResource("16_e8heu")
+
+[node name="Label5" type="Label" parent="Coin Labels"]
+offset_left = 12866.0
+offset_top = 151.0
+offset_right = 12979.0
+offset_bottom = 351.0
+scale = Vector2(1, 1.4399993)
+theme_override_fonts/font = ExtResource("15_80cx4")
+theme_override_font_sizes/font_size = 200
+text = "0"
+script = ExtResource("18_hb5m1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Coin Labels/Label5"]
+position = Vector2(-95, 95.833374)
+scale = Vector2(1.4824075, 1)
+texture = ExtResource("16_e8heu")
+
+[node name="Label6" type="Label" parent="Coin Labels"]
+offset_left = 15591.0
+offset_top = 135.0
+offset_right = 15704.0
+offset_bottom = 335.0
+scale = Vector2(1, 1.4399993)
+theme_override_fonts/font = ExtResource("15_80cx4")
+theme_override_font_sizes/font_size = 200
+text = "0"
+script = ExtResource("18_hb5m1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Coin Labels/Label6"]
+position = Vector2(-95, 95.833374)
+scale = Vector2(1.4824075, 1)
+texture = ExtResource("16_e8heu")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Touch Controls" parent="Control" instance=ExtResource("18_rvswv")]
+
+[node name="Shop Bar" parent="." instance=ExtResource("20_e36ub")]
+offset_left = 1058.0
+offset_top = 342.0
+offset_right = 1058.0
+offset_bottom = 342.0
+
+[connection signal="body_entered" from="Enemys/Enemy/Area2D" to="Enemys/Enemy" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Enemys/Enemy2/Area2D" to="Enemys/Enemy2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Enemys/Enemy3/Area2D" to="Enemys/Enemy3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Enemys/Enemy5/Area2D" to="Enemys/Enemy5" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Enemys/Enemy6/Area2D" to="Enemys/Enemy6" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Enemys/Enemy4/Area2D" to="Enemys/Enemy4" method="_on_area_2d_body_entered"]
