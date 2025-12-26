@@ -14,15 +14,15 @@ corner_radius_bottom_left = 30
 [node name="Touch Controls" type="CanvasLayer"]
 
 [node name="Virtual Joystick" parent="." instance=ExtResource("1_1gcqp")]
-offset_left = 1588.0
+offset_left = 2008.0
 offset_top = -275.0
-offset_right = 1888.0
+offset_right = 2308.0
 offset_bottom = 25.0
 
 [node name="Button" type="Button" parent="."]
-offset_left = 1083.0
+offset_left = 1503.0
 offset_top = 943.0
-offset_right = 1578.0
+offset_right = 1998.0
 offset_bottom = 1032.0
 theme_override_fonts/font = ExtResource("2_ep0mg")
 theme_override_font_sizes/font_size = 50

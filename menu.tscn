@@ -48,25 +48,25 @@ grow_vertical = 2
 script = ExtResource("1_ytr4m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(958, 478)
-scale = Vector2(7.6650486, 7.607143)
+position = Vector2(1753.375, 1199)
+scale = Vector2(12.813107, 16.190475)
 texture = ExtResource("1_lti8b")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 291.0
+offset_left = 717.0
 offset_top = 68.0
-offset_right = 1641.0
+offset_right = 1655.0
 offset_bottom = 219.0
 theme_override_fonts/font = ExtResource("2_ouk20")
 theme_override_font_sizes/font_size = 150
-text = "⚔️ Enemy Slash ⚔️"
+text = " Enemy Slash "
 
 [node name="Start" type="Button" parent="."]
 layout_mode = 0
-offset_left = 562.0
+offset_left = 838.0
 offset_top = 716.0
-offset_right = 2476.0
+offset_right = 2752.0
 offset_bottom = 1121.3334
 scale = Vector2(0.3600003, 0.3600003)
 focus_mode = 0
@@ -78,9 +78,9 @@ text = "  ▶️  Start   "
 
 [node name="lg" type="Button" parent="."]
 layout_mode = 0
-offset_left = 641.0
+offset_left = 917.0
 offset_top = 313.0
-offset_right = 749.0
+offset_right = 1025.0
 offset_bottom = 422.0
 scale = Vector2(2.0799992, 2.0799992)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ytr4m")
@@ -98,9 +98,9 @@ icon = ExtResource("3_mae5d")
 
 [node name="dg" type="Button" parent="."]
 layout_mode = 0
-offset_left = 978.00006
+offset_left = 1254.0
 offset_top = 297.99997
-offset_right = 1086.0
+offset_right = 1362.0
 offset_bottom = 406.99997
 scale = Vector2(2.2799993, 2.2799993)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ytr4m")
@@ -118,15 +118,16 @@ icon = ExtResource("5_l48gv")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 656.0
+offset_left = 932.0
 offset_top = 549.0
-offset_right = 1178.0
+offset_right = 1454.0
 offset_bottom = 620.0
 theme_override_fonts/font = ExtResource("2_ouk20")
 theme_override_font_sizes/font_size = 70
 text = "Select your skin."
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(276, 0)
 stream = ExtResource("6_l48gv")
 autoplay = true
 

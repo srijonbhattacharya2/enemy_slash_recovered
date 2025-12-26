@@ -35,20 +35,20 @@ grow_vertical = 2
 script = ExtResource("1_2i26t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1074.75, 703.5)
-scale = Vector2(7.9563107, 9.375)
+position = Vector2(3059.2498, 1757.5)
+scale = Vector2(20.80097, 21.922619)
 texture = ExtResource("1_j5gld")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 400.0
+offset_left = 612.0
 offset_top = 325.0
-offset_right = 1419.0
+offset_right = 1631.0
 offset_bottom = 425.0
 scale = Vector2(1.1200004, 1.1200004)
 theme_override_fonts/font = ExtResource("2_7mukl")
 theme_override_font_sizes/font_size = 100
-text = "🎉  You made it!  🎉"
+text = "  You made it!  "
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 299)
@@ -58,9 +58,9 @@ autoplay = true
 
 [node name="exit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1037.0
+offset_left = 1249.0
 offset_top = 641.0
-offset_right = 2711.9985
+offset_right = 2923.9985
 offset_bottom = 1038.0
 scale = Vector2(0.3600003, 0.3600003)
 focus_mode = 0
@@ -73,9 +73,9 @@ icon = ExtResource("4_jvc3m")
 
 [node name="restart" type="Button" parent="."]
 layout_mode = 0
-offset_left = 320.0
+offset_left = 532.0
 offset_top = 645.0
-offset_right = 1994.0
+offset_right = 2206.0
 offset_bottom = 1042.0
 scale = Vector2(0.3600003, 0.3600003)
 focus_mode = 0
