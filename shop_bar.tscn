@@ -28,9 +28,9 @@ texture = ExtResource("1_p6o4r")
 [node name="sword_buy" type="Button" parent="."]
 layout_mode = 0
 offset_left = 15.0
-offset_top = 10.0
+offset_top = 27.0
 offset_right = 88.0
-offset_bottom = 50.0
+offset_bottom = 67.0
 theme_override_fonts/font = ExtResource("2_2fn6m")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_hrtl5")
@@ -49,5 +49,15 @@ text = "Shop Bar"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = -5.0
+offset_right = 71.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("2_2fn6m")
+theme_override_font_sizes/font_size = 30
+text = "$10"
 
 [connection signal="pressed" from="sword_buy" to="." method="_on_sword_buy_pressed"]
