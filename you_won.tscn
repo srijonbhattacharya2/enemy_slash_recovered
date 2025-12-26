@@ -41,9 +41,9 @@ texture = ExtResource("1_j5gld")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 612.0
+offset_left = 726.0
 offset_top = 325.0
-offset_right = 1631.0
+offset_right = 1471.0
 offset_bottom = 425.0
 scale = Vector2(1.1200004, 1.1200004)
 theme_override_fonts/font = ExtResource("2_7mukl")
