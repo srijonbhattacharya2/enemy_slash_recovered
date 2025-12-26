@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bmm1quh2tgto"]
+[gd_scene load_steps=37 format=3 uid="uid://bmm1quh2tgto"]
 
 [ext_resource type="Script" uid="uid://crwbtkcxm6th8" path="res://global.gd" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://cx7anx2l5y05p" path="res://pictures/Enemy.png" id="3_feb5d"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cp57agmu82o6j" path="res://touch_controls.tscn" id="18_rvswv"]
 [ext_resource type="PackedScene" uid="uid://b66ay7qjddaa6" path="res://shop_bar.tscn" id="20_e36ub"]
 [ext_resource type="Script" uid="uid://brwqh0y74nfgq" path="res://0 of 3.gd" id="21_bnpwn"]
+[ext_resource type="Script" uid="uid://cc2krj4b7strq" path="res://win_region.gd" id="30_36jdj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
 size = Vector2(676.2272, 676.22644)
@@ -44,6 +45,9 @@ size = Vector2(31, 1831)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_215e1"]
 size = Vector2(20193, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfvwf"]
+size = Vector2(240, 2006)
 
 [node name="Game" type="Node2D"]
 
@@ -191,7 +195,7 @@ shape = SubResource("RectangleShape2D_lc2xo")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_left = -29
 limit_top = -8
-limit_right = 17173
+limit_right = 18339
 limit_bottom = 1648
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
@@ -337,10 +341,6 @@ shape = SubResource("RectangleShape2D_mfdv2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
 position = Vector2(-47.5, 803.5)
-shape = SubResource("RectangleShape2D_iotsf")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundary"]
-position = Vector2(17402, 830)
 shape = SubResource("RectangleShape2D_iotsf")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundary"]
@@ -562,9 +562,18 @@ offset_top = 342.0
 offset_right = 1058.0
 offset_bottom = 342.0
 
+[node name="Win Region" type="Area2D" parent="."]
+position = Vector2(16907, 829)
+script = ExtResource("30_36jdj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Win Region"]
+position = Vector2(110, -20)
+shape = SubResource("RectangleShape2D_xfvwf")
+
 [connection signal="body_entered" from="Enemys/Enemy/Area2D" to="Enemys/Enemy" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy2/Area2D" to="Enemys/Enemy2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy3/Area2D" to="Enemys/Enemy3" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy5/Area2D" to="Enemys/Enemy5" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy6/Area2D" to="Enemys/Enemy6" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Enemys/Enemy4/Area2D" to="Enemys/Enemy4" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Win Region" to="Win Region" method="_on_body_entered"]

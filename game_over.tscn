@@ -79,6 +79,7 @@ icon = ExtResource("4_8u835")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 190)
 stream = ExtResource("6_28vn7")
+volume_db = 12.117
 autoplay = true
 
 [connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]

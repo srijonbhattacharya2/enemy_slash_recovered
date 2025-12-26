@@ -13,6 +13,7 @@ config_version=5
 config/name="EnemySlash_Recovered"
 run/main_scene="uid://dpgjc6n5l2kxx"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]

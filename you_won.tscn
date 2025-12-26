@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpd8hyhorkyf6"]
+
+[ext_resource type="Script" uid="uid://b4md23kqoft1p" path="res://you_won.gd" id="1_2i26t"]
+[ext_resource type="Texture2D" uid="uid://d0qs4scq0b7my" path="res://pictures/Background.png" id="1_j5gld"]
+[ext_resource type="FontFile" uid="uid://ccprvc1rlutw0" path="res://BoldPixels.ttf" id="2_7mukl"]
+[ext_resource type="AudioStream" uid="uid://bwpxt1yupccmg" path="res://Audio/You Won.mp3" id="3_o5gfq"]
+[ext_resource type="Texture2D" uid="uid://b7xjo1oj6siwq" path="res://pictures/Cross.png" id="4_jvc3m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2i26t"]
+bg_color = Color(0.7162962, 0.71629626, 0.7162961, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 50
+corner_radius_bottom_right = 50
+
+[node name="You won" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2i26t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1074.75, 703.5)
+scale = Vector2(7.9563107, 9.375)
+texture = ExtResource("1_j5gld")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 325.0
+offset_right = 1419.0
+offset_bottom = 425.0
+scale = Vector2(1.1200004, 1.1200004)
+theme_override_fonts/font = ExtResource("2_7mukl")
+theme_override_font_sizes/font_size = 100
+text = "🎉  You made it!  🎉"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, 299)
+stream = ExtResource("3_o5gfq")
+volume_db = 13.127
+autoplay = true
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 751.0
+offset_top = 607.0
+offset_right = 1925.0001
+offset_bottom = 1004.0
+scale = Vector2(0.3600003, 0.3600003)
+focus_mode = 0
+theme_override_colors/font_color = Color(0.41981265, 0.4198134, 0.41981277, 1)
+theme_override_fonts/font = ExtResource("2_7mukl")
+theme_override_font_sizes/font_size = 200
+theme_override_styles/normal = SubResource("StyleBoxFlat_2i26t")
+text = " Exit "
+icon = ExtResource("4_jvc3m")
+
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
