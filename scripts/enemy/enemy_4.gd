@@ -1,7 +1,7 @@
 extends Sprite2D
 
 @export var target: CharacterBody2D
-@export var speed: = 250.0
+@export var speed: = 350.0
 @onready var Error: AudioStreamPlayer2D = $"../AudioStreamPlayer2D"
 
 func _physics_process(delta):

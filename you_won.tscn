@@ -1,12 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpd8hyhorkyf6"]
+[gd_scene load_steps=9 format=3 uid="uid://bpd8hyhorkyf6"]
 
 [ext_resource type="Script" uid="uid://b4md23kqoft1p" path="res://you_won.gd" id="1_2i26t"]
 [ext_resource type="Texture2D" uid="uid://d0qs4scq0b7my" path="res://pictures/Background.png" id="1_j5gld"]
 [ext_resource type="FontFile" uid="uid://ccprvc1rlutw0" path="res://BoldPixels.ttf" id="2_7mukl"]
 [ext_resource type="AudioStream" uid="uid://bwpxt1yupccmg" path="res://Audio/You Won.mp3" id="3_o5gfq"]
 [ext_resource type="Texture2D" uid="uid://b7xjo1oj6siwq" path="res://pictures/Cross.png" id="4_jvc3m"]
+[ext_resource type="Texture2D" uid="uid://f7amgtsvv4as" path="res://pictures/Restart.png" id="6_h8jbv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2i26t"]
+bg_color = Color(0.7162962, 0.71629626, 0.7162961, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 50
+corner_radius_bottom_right = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8tfe"]
 bg_color = Color(0.7162962, 0.71629626, 0.7162961, 1)
 border_width_left = 10
 border_width_top = 10
@@ -48,10 +58,10 @@ autoplay = true
 
 [node name="exit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 751.0
-offset_top = 607.0
-offset_right = 1925.0001
-offset_bottom = 1004.0
+offset_left = 1037.0
+offset_top = 641.0
+offset_right = 2711.9985
+offset_bottom = 1038.0
 scale = Vector2(0.3600003, 0.3600003)
 focus_mode = 0
 theme_override_colors/font_color = Color(0.41981265, 0.4198134, 0.41981277, 1)
@@ -61,4 +71,20 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2i26t")
 text = " Exit "
 icon = ExtResource("4_jvc3m")
 
+[node name="restart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 645.0
+offset_right = 1994.0
+offset_bottom = 1042.0
+scale = Vector2(0.3600003, 0.3600003)
+focus_mode = 0
+theme_override_colors/font_color = Color(0.41981265, 0.4198134, 0.41981277, 1)
+theme_override_fonts/font = ExtResource("2_7mukl")
+theme_override_font_sizes/font_size = 200
+theme_override_styles/normal = SubResource("StyleBoxFlat_k8tfe")
+text = "  Play Again  "
+icon = ExtResource("6_h8jbv")
+
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]

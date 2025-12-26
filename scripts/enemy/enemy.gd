@@ -3,7 +3,7 @@
 extends Sprite2D
 
 @export var target: CharacterBody2D
-@export var speed: = 100.0
+@export var speed: = 200.0
 @onready var Error: AudioStreamPlayer2D = $"../AudioStreamPlayer2D"
 
 
@@ -18,10 +18,11 @@ func _physics_process(delta):
 
 	if Global.health < 1:
 		await get_tree().create_timer(1.0).timeout
-		print("Self valid:", is_instance_valid(self))
-		print("Inside tree:", is_inside_tree())
-		print("Tree:", get_tree())
 		#get_tree().change_scene_to_file("res://game_over.tscn")
+		Global.coins = 0
+		Global.health = 3
+		Global.sword = 0
+		Global.sword_usage = 0
 		get_tree().call_deferred("change_scene_to_file", "res://game_over.tscn")
 
 
