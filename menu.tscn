@@ -65,9 +65,9 @@ text = " Enemy Slash "
 [node name="Start" type="Button" parent="."]
 layout_mode = 0
 offset_left = 838.0
-offset_top = 716.0
+offset_top = 607.0
 offset_right = 2752.0
-offset_bottom = 1121.3334
+offset_bottom = 1012.3334
 scale = Vector2(0.3600003, 0.3600003)
 focus_mode = 0
 theme_override_colors/font_color = Color(0.41981265, 0.4198134, 0.41981277, 1)
@@ -79,9 +79,9 @@ text = "  ▶️  Start   "
 [node name="lg" type="Button" parent="."]
 layout_mode = 0
 offset_left = 917.0
-offset_top = 313.0
+offset_top = 250.00003
 offset_right = 1025.0
-offset_bottom = 422.0
+offset_bottom = 359.00003
 scale = Vector2(2.0799992, 2.0799992)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ytr4m")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_l48gv")
@@ -99,9 +99,9 @@ icon = ExtResource("3_mae5d")
 [node name="dg" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1254.0
-offset_top = 297.99997
+offset_top = 235.0
 offset_right = 1362.0
-offset_bottom = 406.99997
+offset_bottom = 344.0
 scale = Vector2(2.2799993, 2.2799993)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ytr4m")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_l48gv")
@@ -119,9 +119,9 @@ icon = ExtResource("5_l48gv")
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
 offset_left = 932.0
-offset_top = 549.0
+offset_top = 486.00003
 offset_right = 1454.0
-offset_bottom = 620.0
+offset_bottom = 557.0
 theme_override_fonts/font = ExtResource("2_ouk20")
 theme_override_font_sizes/font_size = 70
 text = "Select your skin."
@@ -131,6 +131,21 @@ position = Vector2(276, 0)
 stream = ExtResource("6_l48gv")
 autoplay = true
 
+[node name="About" type="Button" parent="."]
+layout_mode = 0
+offset_left = 838.0
+offset_top = 791.0
+offset_right = 2752.0
+offset_bottom = 1196.3334
+scale = Vector2(0.3600003, 0.3600003)
+focus_mode = 0
+theme_override_colors/font_color = Color(0.41981265, 0.4198134, 0.41981277, 1)
+theme_override_fonts/font = ExtResource("2_ouk20")
+theme_override_font_sizes/font_size = 300
+theme_override_styles/normal = SubResource("StyleBoxFlat_4hy44")
+text = "  About  "
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="lg" to="." method="_on_lg_pressed"]
 [connection signal="pressed" from="dg" to="." method="_on_dg_pressed"]
+[connection signal="pressed" from="About" to="." method="_on_about_pressed"]

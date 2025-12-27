@@ -48,9 +48,9 @@ text = " Game Over "
 
 [node name="restart" type="Button" parent="."]
 layout_mode = 0
-offset_left = 547.0
+offset_left = 471.0
 offset_top = 645.0
-offset_right = 1721.0
+offset_right = 1645.0
 offset_bottom = 1042.0
 scale = Vector2(0.3600003, 0.3600003)
 focus_mode = 0
@@ -63,9 +63,9 @@ icon = ExtResource("3_ccer4")
 
 [node name="exit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1654.9999
+offset_left = 1578.9999
 offset_top = 645.0
-offset_right = 2829.0
+offset_right = 2753.0
 offset_bottom = 1042.0
 scale = Vector2(0.3600003, 0.3600003)
 focus_mode = 0

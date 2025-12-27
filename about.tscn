@@ -1,0 +1,96 @@
+[gd_scene load_steps=15 format=3 uid="uid://cx3qp6tfswbe7"]
+
+[ext_resource type="Texture2D" uid="uid://d0qs4scq0b7my" path="res://pictures/Background.png" id="1_4q2eq"]
+[ext_resource type="Script" uid="uid://didconrdtf4p6" path="res://about.gd" id="1_k56y8"]
+[ext_resource type="FontFile" uid="uid://ccprvc1rlutw0" path="res://BoldPixels.ttf" id="2_pp48r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pp48r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k56y8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h6umi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sx25x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x5r8a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5tp7k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ik7te"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7n2fl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkww8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2lv4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xdudg"]
+
+[node name="About" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k56y8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1167.75, 637.5)
+scale = Vector2(8.558252, 8.589286)
+texture = ExtResource("1_4q2eq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 902.0
+offset_top = 101.0
+offset_right = 1365.0
+offset_bottom = 301.0
+theme_override_fonts/font = ExtResource("2_pp48r")
+theme_override_font_sizes/font_size = 200
+text = "About"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 362.0
+offset_right = 1509.0
+offset_bottom = 721.0
+theme_override_font_sizes/normal_font_size = 45
+theme_override_font_sizes/bold_font_size = 50
+theme_override_font_sizes/bold_italics_font_size = 60
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 20
+text = "Game Design and Development:
+Srijon Bhattacharya
+
+Published by:
+AppApex"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 753.0
+offset_right = 2614.0
+offset_bottom = 1158.3334
+scale = Vector2(0.3600003, 0.3600003)
+focus_mode = 0
+theme_override_colors/font_color = Color(0.80397177, 0.84602547, 0.83585334, 1)
+theme_override_colors/font_pressed_color = Color(0.7708395, 0.77083945, 0.77083945, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_pp48r")
+theme_override_font_sizes/font_size = 300
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pp48r")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_k56y8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_h6umi")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sx25x")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_x5r8a")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5tp7k")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ik7te")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_7n2fl")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qkww8")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_j2lv4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xdudg")
+text = "⬅️ Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
